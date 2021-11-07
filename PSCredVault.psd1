@@ -29,6 +29,9 @@
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion = '5.1'
     
+    # ID used to uniquely identify this module
+    GUID = '16eaff8a-9219-48a2-be7b-bda33653007b'
+    
     # Name of the Windows PowerShell host required by this module
     # PowerShellHostName = ''
     
