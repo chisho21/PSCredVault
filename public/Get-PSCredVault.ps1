@@ -20,6 +20,7 @@ function Get-PSCredVault {
     }
 
     if ($keys){
+        #$keys | % {}
         foreach ($key in $keys){
             $cred = Import-Clixml $key.FullName
             $props = @{
