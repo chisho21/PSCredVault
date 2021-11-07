@@ -15,6 +15,5 @@ jobs:
           NUGET_KEY: ${{ secrets.PSGALLERY_API_KEY }}
         shell: pwsh
         run: |
-          pwd
-          get-childitem
-          Write-Output "Would use key for $($env:NUGET_KEY)"
+          Import-Module .\PSCredVault.psd1 -verbose
+          Publish-Module -Path .\ -NuGetApiKey $env:NUGET_KEY -Verbose
