@@ -3,17 +3,20 @@ name: publishtopsgallery
 
 on:
   release:
-    types: [created]
+    types: [published]
+    
+  workflow_dispatch: # Enables the possibility to trigger the workflow manually
 
 jobs:
   publish-to-gallery:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build and publish
+      - name: checkout
+        uses: actions/checkout@v2
+        
+      - name: Publishing
         env:
           NUGET_KEY: ${{ secrets.PSGALLERY_API_KEY }}
         shell: pwsh
         run: |
-          Import-Module .\PSCredVault.psd1 -verbose
-          Publish-Module -Path .\ -NuGetApiKey $env:NUGET_KEY -Verbose
+          Publish-Module -Path '...' -NuGetApiKey $env:NUGET_KEY -Verbose
