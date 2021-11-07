@@ -16,4 +16,4 @@ jobs:
         shell: pwsh
         run: |
           Import-Module ./PSCredVault.psd1
-          Publish-Module -Name PSCredVault -NuGetApiKey $env:NUGET_KEY -Verbose
+          Publish-Module -Path ./PSCredVault.psd1 -NuGetApiKey $env:NUGET_KEY -Verbose
