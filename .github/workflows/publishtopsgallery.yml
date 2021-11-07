@@ -17,5 +17,4 @@ jobs:
         run: |
           pwd
           get-childitem
-          Import-Module .\PSCredVault.psd1
-          Publish-Module -Path .\PSCredVault.psd1 -NuGetApiKey $env:NUGET_KEY -Verbose
+          Write-Output "Would use key for $($env:NUGET_KEY)"
