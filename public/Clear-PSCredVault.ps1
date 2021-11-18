@@ -1,4 +1,5 @@
 function Clear-PSCredVault {
+    [CmdletBinding()]
     param(
         $VaultPath = (Join-Path $env:UserProfile ".Vault"),
         [Switch]
