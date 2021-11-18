@@ -1,4 +1,5 @@
 function Import-PSCredVault {
+    [CmdletBinding()]
     param(
         $VaultPath = (Join-Path $env:UserProfile ".Vault")
      )
@@ -23,6 +24,6 @@ function Import-PSCredVault {
         $outstring = $outstring + " $" + "$($key.basename)"
 
     }
-        Write-Verbose "Credential have been stored to $outstring"
+    Write-Host "Credential have been stored to $outstring" -foregroundcolor green
 
 }# end function
