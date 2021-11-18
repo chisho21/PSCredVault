@@ -1,4 +1,5 @@
 function Get-PSCredVault {
+    [CmdletBinding()]
     param(
         [string[]]
         $Name,
